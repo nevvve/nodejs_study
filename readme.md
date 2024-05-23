@@ -6,6 +6,8 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Ob
 
 .map
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
+
 .reduce 
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
