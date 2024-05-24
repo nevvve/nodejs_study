@@ -1,8 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import TodoBoard from "./components/TodoBoard";
-
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -27,12 +25,12 @@ function App() {
       if(response.status===200){
         console.log("success")
         setTodoValue('')
+
         getTasks()
       } else {
         throw new Error("task not added")
       }
     } catch (error) {
-      
     }
   }
 
