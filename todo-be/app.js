@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const indexRouter = require("./route/index")
 require('dotenv').config()
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 5000;
 const cors = require("cors")
 
 //기본 세팅
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use("/api", indexRouter);
 
 // DB 세팅 
-const mongoURI = process.env.MONGODB_URI
+const mongoURI = process.env.MONGODB_URI_LOCAL
 mongoose.connect(mongoURI)
     .then(() => {
         console.log('mongoose connected');

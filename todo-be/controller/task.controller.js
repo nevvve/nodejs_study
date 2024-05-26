@@ -9,9 +9,9 @@ taskController.createTask = async (req, res) => {
         const newTask = new Task({ task, isComplete });
         await newTask.save();
     return res.status(200).json({ status: "success", data: newTask });
-    } catch (Error) {
-    console.log("123", Error)
-    res.status(400).json({status:"fail", message: Error.message})
+    } catch (error) {
+    console.log("123", error)
+    res.status(400).json({status:"fail", message: error.message})
     }
 };
 
@@ -41,7 +41,7 @@ taskController.updateTask = async (req, res) => {
         // fields.map((item) => (toggleTask[item] = req.body[item]));
         res.status(200).json({ status: "success", data: toggleTask });
     } catch (error) {
-        res.status(400).json({ status: "fail", error });
+        res.status(400).json({ status: "fail", message: error.message });
     }
 }
 
@@ -50,7 +50,7 @@ taskController.deleteTask = async (req, res) => {
       const deleteItem = await Task.findByIdAndDelete(req.params.id);
       res.status(200).json({ status: "success", data: deleteItem });
     } catch (error) {
-      res.status(400).json({ status: "fail", error });
+      res.status(400).json({ status: "fail", message: error.message });
     }
   };
   
