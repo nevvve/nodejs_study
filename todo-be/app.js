@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use("/api", indexRouter);
 
 // DB 세팅 
-const mongoURI = process.env.MONGODB_URI_LOCAL
+const mongoURI = process.env.MONGODB_URI
 mongoose.connect(mongoURI)
     .then(() => {
         console.log('mongoose connected');
