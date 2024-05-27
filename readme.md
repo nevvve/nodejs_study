@@ -23,8 +23,7 @@ atlas ip 허용에 빈스톡 아이피추가
 엄.. 로컬에서도 동일한 증상
 netlify 배포문제가 아닌듯함
 해결중...
-
-
+https://github.com/nevvve/nodejs_study/assets/141805889/3874183f-10d8-45e9-bcd1-bcb07d3a8d7a
 배포 세팅중 publish directory 를 public 으로 해서 생긴 문제..
 
 로컬은 cors 에러때문에 당연히 안되는거였다
@@ -36,7 +35,7 @@ build는 react가 빌드이후에 생긴 코드집합
 
 3.redirection 문제
 
-
+https://github.com/nevvve/nodejs_study/assets/141805889/193058a6-4908-45fb-b099-b29b6c6defbe
 /apitasks로 요청을 보내서 안됐음
 왜?
 환경변수 오타..
@@ -59,6 +58,7 @@ build는 react가 빌드이후에 생긴 코드집합
 빈스톡관련 네트워크 기본 설정들
 빈스톡은 코드 작성하면서 봤던 출력을 볼순 없을까??
 인스턴스에 접근만 가능하다면 가능!
+https://github.com/nevvve/nodejs_study/assets/141805889/a21fcd26-4dc6-420c-8a7f-3cb267cb89ec
 /var/log/web.stdout.log 에 적혀있다..
 /var/log/nginx/error.log 는 nginx 로그
 
