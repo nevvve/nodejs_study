@@ -16,8 +16,8 @@ userController.createUser = async (req,res) => {
         const newUser = new UserDB({email,name,password:hash})
         await newUser.save()
         res.status(200).json({ status: "success" })
-    } catch (Error) {
-        res.status(400).json({ status: "fail", message: Error.message })
+    } catch (error) {
+        res.status(400).json({ status: "fail", message: error.message })
     }
 }
 
@@ -34,11 +34,23 @@ userController.loginUser = async (req,res) => {
             }
         }
         throw new Error ("아이디 혹은 비밀번호가 일치하지 않습니다")
-    } catch (Error) {
-        res.status(400).json({ status: "fail",message: Error.message })
+    } catch (error) {
+        res.status(400).json({ status: "fail",message: error.message })
     }
 }
 
+userController.getUser = async(req,res) => {
+    try {
+        const {userId} = req
+        const user = await UserDB.findById(userId)
+        if(!user){
+            throw new Error("can not find user")
+        }
+        res.status(200).json({status:"success", user})
+    } catch (error) {
+        res.status(400).json({status:"fail",message: error.message})
+    }
+}
 
 
 

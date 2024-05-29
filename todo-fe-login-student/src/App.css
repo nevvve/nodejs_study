@@ -91,3 +91,19 @@ button{
   color: #ffffff;
   border:none;
 }
+
+.logout-container {
+  position: absolute;  
+  top: 9px;           
+  right: 10px;         
+}
+
+.button-logout {
+  background-color: aliceblue;
+  color: rgb(119, 96, 217);              
+  border: none;               
+  padding: 2px 5px;          
+  cursor: pointer;            
+  border-radius: 5px;        
+  font-size: 14px;    
+}

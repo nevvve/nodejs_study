@@ -8,10 +8,19 @@ const PORT = process.env.PORT || 5000;
 const cors = require("cors")
 
 //기본 세팅
+const corsOptions = {
+    origin: process.env.FRONT_URI, // 허용할 도메인
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // 허용할 HTTP 메서드
+    credentials: true, // 인증 정보(쿠키 등) 허용
+    optionsSuccessStatus: 204 // 일부 브라우저의 204 응답에 대한 오류 해결
+  };
+
 const app = express()
 app.use(cors())
 app.use(bodyParser.json());
 app.use("/api", indexRouter);
+
+
 
 // DB 세팅 
 const mongoURI = process.env.MONGODB_URI

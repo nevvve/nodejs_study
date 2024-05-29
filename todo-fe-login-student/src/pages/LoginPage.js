@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,Navigate } from "react-router-dom";
 import api from "../utils/api";
 
 
 
-const LoginPage = () => {
+const LoginPage = ({ user, setUser }) => {
   
   const [email,setEmail] = useState("")
-  const [password,setPassword] =useState("")
+  const [password,setPassword] = useState("")
   const [error,setError] = useState("")
-  const [user,setUser] = useState(null)
 
   const navigate = useNavigate()
 
@@ -30,8 +29,13 @@ const LoginPage = () => {
       setError(error.message)
     }
   }
+
+  if(user){
+    return <Navigate to="/" />
+  }
   return (
     <div className="display-center">
+      
       <Form className="login-box" onSubmit={loginUser}>
         <h1>로그인</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -42,6 +46,7 @@ const LoginPage = () => {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" onChange={(event)=>setPassword(event.target.value)}  />
+          {error && <div>{error}</div>}
         </Form.Group>
         <div className="button-box">
           <Button type="submit" className="button-primary">
